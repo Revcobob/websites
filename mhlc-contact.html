@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0F4C4A" />
+<title>Contact Us · Memory Health Life Center</title>
+<meta name="description" content="Reach the Memory Health Life Center and the Wood County Health Care Foundation in Quitman, Texas. General inquiries, major gifts, media, caregiver questions, and volunteer interest." />
+<meta property="og:title" content="Contact Us · Memory Health Life Center" />
+<meta property="og:description" content="Get in touch with the Memory Health Life Center and the Wood County Health Care Foundation." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    { DEFAULT: '#1F2421', soft: '#3B433E', mute: '#6C736E' },
+          sand:   { DEFAULT: '#F7F2EA', deep: '#EFE6D7', card: '#FBF8F2' },
+          teal:   { DEFAULT: '#0F4C4A', deep: '#0A3A39', soft: '#1A6A66', pale: '#D8E6E4' },
+          clay:   { DEFAULT: '#B8553A', deep: '#8E3F2A', pale: '#F2D7CC' },
+          gold:   { DEFAULT: '#D4A04F', deep: '#A5772E', pale: '#F4E4C1' },
+          sage:   { DEFAULT: '#6F9C7A', deep: '#4F7559', pale: '#DCE9DE' },
+        },
+        fontFamily: {
+          serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+          sans:  ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        },
+        boxShadow: {
+          'soft': '0 1px 2px rgba(15,76,74,0.06), 0 8px 24px rgba(15,76,74,0.06)',
+          'lift': '0 2px 4px rgba(15,76,74,0.08), 0 16px 40px rgba(15,76,74,0.10)',
+        },
+        maxWidth: { 'prose-tight': '62ch' },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #F7F2EA; color: #1F2421; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; font-feature-settings: "kern", "liga"; }
+  *:focus-visible { outline: 3px solid #D4A04F; outline-offset: 3px; border-radius: 6px; }
+  .skip-link { position: absolute; left: -9999px; top: 12px; background: #0F4C4A; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 600; }
+  .skip-link:focus { left: 12px; z-index: 100; }
+  .donate-cta { background: #B8553A; }
+  .donate-cta:hover { background: #8E3F2A; }
+  .marker-line { width: 56px; height: 3px; background: #D4A04F; border-radius: 2px; }
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #0A3A39;
+    background-image:
+      linear-gradient(95deg, rgba(15,76,74,0.95) 0%, rgba(15,76,74,0.88) 25%, rgba(15,76,74,0.55) 50%, rgba(15,76,74,0.18) 75%, rgba(15,76,74,0.05) 100%),
+      linear-gradient(180deg, rgba(10,58,57,0.12) 0%, rgba(10,58,57,0.28) 100%),
+      radial-gradient(circle at 80% 30%, rgba(212,160,79,0.18) 0%, rgba(212,160,79,0) 60%),
+      linear-gradient(180deg, #0F4C4A 0%, #0A3A39 100%);
+  }
+  .page-hero .hero-content > * { max-width: 56ch; }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 0.75rem 0.95rem;
+    border-radius: 10px;
+    border: 1px solid #EFE6D7;
+    background: #FBF8F2;
+    font-size: 1rem;
+    color: #1F2421;
+    transition: border-color 160ms, box-shadow 160ms;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: #1A6A66;
+    box-shadow: 0 0 0 3px rgba(26,106,102,0.18);
+  }
+  .form-field textarea { resize: vertical; min-height: 140px; }
+
+  .path-card {
+    display: flex;
+    flex-direction: column;
+    background: #FBF8F2;
+    border: 1px solid #EFE6D7;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(15,76,74,0.06), 0 8px 24px rgba(15,76,74,0.06);
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms;
+  }
+  .path-card:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(15,76,74,0.08), 0 16px 40px rgba(15,76,74,0.10); }
+  .path-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-stagger > * {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-stagger.is-visible > * { opacity: 1; transform: none; }
+  .reveal-stagger.is-visible > *:nth-child(1) { transition-delay:  60ms; }
+  .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 180ms; }
+  .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 300ms; }
+  .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 420ms; }
+
+  .hero-content > * {
+    opacity: 0; transform: translateY(14px);
+    animation: heroIn 1200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-content > :nth-child(1) { animation-delay: 180ms; }
+  .hero-content > :nth-child(2) { animation-delay: 340ms; }
+  .hero-content > :nth-child(3) { animation-delay: 500ms; }
+  .hero-content > :nth-child(4) { animation-delay: 660ms; }
+  @keyframes heroIn { to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .reveal-stagger > *, .hero-content > * {
+      opacity: 1 !important; transform: none !important;
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="bg-ink text-sand text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+    <span><strong class="font-semibold">Prototype</strong> · Contact Us · Memory Health Life Center</span>
+    <span class="text-sand/70">A project of the Wood County Health Care Foundation</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-sand/95 backdrop-blur supports-[backdrop-filter]:bg-sand/80 border-b border-sand-deep">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-16 lg:h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="mhlc-homepage test.html" aria-label="Memory Health Life Center, home" class="shrink-0">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-teal text-sand font-serif font-semibold text-lg">M</span>
+        </a>
+        <div class="leading-tight">
+          <a href="mhlc-homepage test.html" class="block font-serif font-semibold text-ink text-lg hover:text-teal-deep">Memory Health Life Center</a>
+          <a href="mhlc-foundation.html" class="block text-[11px] uppercase tracking-[0.14em] text-ink-mute hover:text-teal underline decoration-clay/40 decoration-1 underline-offset-[3px] hover:decoration-clay">A project of the Wood County Health Care Foundation</a>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-ink-soft" aria-label="Primary">
+        <a href="mhlc-overview.html" class="hover:text-teal">The Project</a>
+        <a href="mhlc-homepage test.html#need" class="hover:text-teal">The Need</a>
+        <a href="mhlc-homepage test.html#progress" class="hover:text-teal">Progress</a>
+        <a href="mhlc-homepage test.html#families" class="hover:text-teal">Families</a>
+        <a href="mhlc-homepage test.html#partners" class="hover:text-teal">Partners</a>
+        <a href="mhlc-foundation.html" class="hover:text-teal">Foundation</a>
+        <a href="mhlc-contact.html" class="text-teal-deep hover:text-teal" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="mhlc-give.html" class="hidden sm:inline-flex donate-cta text-white font-semibold px-5 py-2.5 rounded-full shadow-soft transition-colors">Donate</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="page-hero text-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 hero-content">
+    <p class="text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-gold-pale">
+      <a href="mhlc-homepage test.html" class="hover:text-white">Home</a>
+      <span class="text-sand/40 mx-1">/</span>
+      <span class="text-sand">Contact Us</span>
+    </p>
+    <h1 class="mt-5 font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+      Get in touch.
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-sand/85 max-w-prose-tight">
+      Fill out the form below and a member of the Wood County Health Care Foundation team will be in touch within one business day. For urgent caregiver questions, the Alzheimer's Association 24/7 Helpline is on the <a href="mhlc-resources.html" class="underline decoration-gold/50 underline-offset-4 hover:decoration-gold font-semibold text-white">Resources</a> page.
+    </p>
+  </div>
+</section>
+
+<!-- FORM + INFO -->
+<section class="py-16 sm:py-20 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+      <!-- FORM (main) -->
+      <div class="lg:col-span-7">
+        <div class="reveal">
+          <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Send a Message</p>
+          <div class="marker-line mt-3"></div>
+          <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">We read every message.</h2>
+          <p class="mt-4 text-base text-ink-soft leading-relaxed max-w-prose-tight">
+            Tell us what you're reaching out about and the best way to get back to you. A foundation team member will respond within one business day.
+          </p>
+        </div>
+
+        <form id="contactForm" class="mt-8 rounded-2xl bg-white border border-sand-deep p-6 sm:p-8 shadow-soft reveal" novalidate>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="form-field">
+              <label for="firstName" class="block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2">First name <span class="text-clay">*</span></label>
+              <input type="text" id="firstName" name="first-name" autocomplete="given-name" required />
+            </div>
+            <div class="form-field">
+              <label for="lastName" class="block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2">Last name <span class="text-clay">*</span></label>
+              <input type="text" id="lastName" name="last-name" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="form-field mt-4">
+            <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2">Email <span class="text-clay">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+
+          <div class="form-field mt-4">
+            <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+
+          <div class="form-field mt-4">
+            <label for="topic" class="block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2">What's this about? <span class="text-clay">*</span></label>
+            <select id="topic" name="topic" required>
+              <option value="">Choose a topic…</option>
+              <option value="general">General inquiry</option>
+              <option value="major-gift">Major gift or planned giving</option>
+              <option value="partner">Partnership or sponsorship</option>
+              <option value="caregiver">Caregiver question</option>
+              <option value="media">Media or press</option>
+              <option value="event">Event submission or RSVP</option>
+              <option value="volunteer">Volunteer interest</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-field mt-4">
+            <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2">Your message <span class="text-clay">*</span></label>
+            <textarea id="message" name="message" rows="6" required placeholder="Tell us what you'd like to talk about."></textarea>
+          </div>
+
+          <div class="mt-5 flex items-start gap-3">
+            <input id="consent" type="checkbox" required class="mt-1 h-4 w-4 accent-clay" />
+            <label for="consent" class="text-sm text-ink-soft">I understand the foundation may follow up by email or phone using the contact information I provided.</label>
+          </div>
+
+          <p class="mt-4 text-xs text-ink-mute flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            We never share your information. CAPTCHA verification will appear here when the form is wired up.
+          </p>
+
+          <div class="mt-6">
+            <button type="submit" class="bg-teal text-sand font-semibold px-6 py-3 rounded-full hover:bg-teal-deep transition-colors w-full sm:w-auto sm:px-10">
+              <span id="submitLabel">Send message</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO (sidebar) -->
+      <aside class="lg:col-span-5 space-y-6">
+        <div class="rounded-2xl bg-teal-deep text-sand p-7 shadow-lift reveal">
+          <p class="text-xs uppercase tracking-[0.18em] text-gold-pale">Contact Information</p>
+          <h3 class="mt-2 font-serif text-xl font-semibold">Wood County Health Care Foundation</h3>
+          <address class="mt-4 not-italic text-sm text-sand/85 leading-relaxed">
+            405 East Lipscomb St.<br/>
+            Quitman, TX 75783
+          </address>
+          <ul class="mt-5 space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-sand/10 shrink-0" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+              </span>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-sand/60">Telephone</p>
+                <a href="tel:+19037609224" class="block mt-1 font-serif text-xl font-semibold text-gold-pale hover:text-white">(903) 760-9224</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-sand/10 shrink-0" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              </span>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-sand/60">Email</p>
+                <p class="mt-1 text-sm text-sand/80"><span class="font-mono text-xs bg-sand/10 px-2 py-1 rounded">email address pending</span></p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-sand/10 shrink-0" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="2 11 13 2 13 22 2 13"/><circle cx="18" cy="12" r="3"/></svg>
+              </span>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-sand/60">Fax</p>
+                <p class="mt-1 text-sm text-sand/75 italic">Pending</p>
+              </div>
+            </li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-sand/15">
+            <p class="text-xs uppercase tracking-wider text-sand/60">Tax status</p>
+            <p class="mt-1 text-sm">501(c)(3) public charity</p>
+            <p class="mt-1 text-xs text-sand/65">EIN <span class="font-mono">75-2309177</span></p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-sand-card border border-sand-deep p-6 shadow-soft reveal">
+          <p class="text-xs font-semibold uppercase tracking-wider text-clay">Office hours</p>
+          <h3 class="mt-2 font-serif text-lg font-semibold text-ink">Monday – Friday, 9 a.m. – 5 p.m. Central</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">Closed on federal holidays. Voicemail and email are checked daily. We aim to respond within one business day.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER WAYS TO REACH US -->
+<section class="py-16 sm:py-20 bg-sand-deep/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Other Ways To Reach Us</p>
+      <div class="marker-line mt-3"></div>
+      <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">Different question, different door.</h2>
+      <p class="mt-4 text-base sm:text-lg text-ink-soft leading-relaxed">If your question fits one of these paths, going direct usually gets you a faster answer.</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal-stagger">
+
+      <article class="path-card">
+        <span class="path-icon bg-clay-pale text-clay-deep" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <h3 class="mt-5 font-serif text-lg font-semibold text-ink">Major gifts</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">Planned giving, IRA QCDs, appreciated stock, bequests, and naming opportunities. The foundation's gift officer takes these calls personally.</p>
+        <a href="mhlc-give.html#other-ways" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-clay">
+          See giving paths
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="path-card">
+        <span class="path-icon bg-sage-pale text-sage-deep" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+        </span>
+        <h3 class="mt-5 font-serif text-lg font-semibold text-ink">Caregiver crisis line</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">If you need to talk to someone tonight, the Alzheimer's Association 24/7 Helpline is staffed by master's-level clinicians. Free, confidential, in any language.</p>
+        <a href="tel:+18002723900" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-clay">
+          800.272.3900
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="path-card">
+        <span class="path-icon bg-gold-pale text-gold-deep" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+        </span>
+        <h3 class="mt-5 font-serif text-lg font-semibold text-ink">Media & press</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">Press inquiries, interview requests, b-roll, or background documents. Choose "Media or press" in the form on this page and a media contact will respond.</p>
+        <a href="#contactForm" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-clay">
+          Use the form
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="path-card">
+        <span class="path-icon bg-teal-pale text-teal-deep" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </span>
+        <h3 class="mt-5 font-serif text-lg font-semibold text-ink">Events & RSVP</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">Submitting an event, reserving a seat, or asking about a workshop. The events team manages these directly.</p>
+        <a href="mhlc-events.html" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-clay">
+          See the calendar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISIT US / MAP -->
+<section class="py-16 sm:py-20 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5 reveal">
+        <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Visit Us</p>
+        <div class="marker-line mt-3"></div>
+        <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">Find us in Quitman.</h2>
+        <p class="mt-4 text-base text-ink-soft leading-relaxed">
+          The foundation office is on East Lipscomb Street, a short walk from the courthouse square. Free street parking out front.
+        </p>
+        <address class="mt-5 not-italic text-base text-ink leading-relaxed">
+          <strong class="text-ink">Wood County Health Care Foundation</strong><br/>
+          405 East Lipscomb St.<br/>
+          Quitman, TX 75783
+        </address>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="https://www.google.com/maps?q=405+East+Lipscomb+St,+Quitman,+TX+75783" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-teal text-sand font-semibold px-5 py-2.5 rounded-full hover:bg-teal-deep text-sm">
+            Open in Google Maps
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <a href="tel:+19037609224" class="inline-flex items-center gap-2 bg-sand-deep text-ink font-semibold px-5 py-2.5 rounded-full hover:bg-sand text-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+            Call first
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <div class="rounded-2xl overflow-hidden border border-sand-deep shadow-soft bg-sand-deep">
+          <div class="aspect-[16/10]">
+            <iframe
+              src="https://www.google.com/maps?q=405+East+Lipscomb+St,+Quitman,+TX+75783&output=embed"
+              title="Map of 405 East Lipscomb Street, Quitman, Texas"
+              class="w-full h-full block"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <p class="mt-3 text-xs text-ink-mute italic">Map data © Google. For door-to-door directions, open in Google Maps using the link to the left.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-16 sm:py-20 bg-teal-deep text-sand">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+    <p class="text-sm font-semibold text-gold-pale uppercase tracking-[0.18em]">Already know what you want to do?</p>
+    <h2 class="mt-3 font-serif font-semibold text-3xl sm:text-4xl leading-tight">
+      Skip the form. Take the action.
+    </h2>
+    <p class="mt-5 text-lg text-sand/85 leading-relaxed">
+      Three of the most common reasons people reach out — direct paths below.
+    </p>
+    <div class="mt-7 flex flex-wrap justify-center gap-3">
+      <a href="mhlc-give.html" class="donate-cta text-white font-semibold px-6 py-3 rounded-full shadow-lift">Make a gift</a>
+      <a href="mhlc-events.html" class="bg-sand text-teal-deep font-semibold px-6 py-3 rounded-full hover:bg-white">See upcoming events</a>
+      <a href="mhlc-resources.html" class="inline-flex items-center gap-2 bg-sand/10 border border-sand/20 text-sand font-semibold px-6 py-3 rounded-full hover:bg-sand/15">Caregiver resources</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-sand/85">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-teal text-sand font-serif font-semibold text-lg">M</span>
+          <span class="leading-tight">
+            <span class="block font-serif font-semibold text-sand text-lg">Memory Health Life Center</span>
+            <span class="block text-[11px] uppercase tracking-[0.14em] text-sand/60">Wood County Health Care Foundation</span>
+          </span>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed max-w-md">A 54-bed, Hogeweyk-inspired memory care campus for East Texas, in Quitman, Texas. Stewarded by the Wood County Health Care Foundation, a 501(c)(3) charitable organization.</p>
+        <p class="mt-5 text-xs text-sand/60">EIN <span class="font-mono">75-2309177</span></p>
+      </div>
+
+      <nav class="md:col-span-3" aria-label="Footer nav">
+        <p class="text-xs font-semibold uppercase tracking-wider text-sand/70">Explore</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="mhlc-overview.html" class="hover:text-white">Project overview</a></li>
+          <li><a href="mhlc-resources.html" class="hover:text-white">Resources</a></li>
+          <li><a href="mhlc-events.html" class="hover:text-white">Events</a></li>
+          <li><a href="mhlc-letters-of-support.html" class="hover:text-white">Letters of support</a></li>
+          <li><a href="mhlc-give.html" class="hover:text-white">Donate</a></li>
+          <li><a href="mhlc-contributors.html" class="hover:text-white">Honor roll</a></li>
+          <li><a href="mhlc-foundation.html" class="hover:text-white">About the Foundation</a></li>
+          <li><a href="mhlc-contact.html" class="hover:text-white" aria-current="page">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-4">
+        <p class="text-xs font-semibold uppercase tracking-wider text-sand/70">Stay informed</p>
+        <p class="mt-3 text-sm">Monthly progress updates from the Foundation.</p>
+        <form class="mt-4 flex gap-2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you';">
+          <label for="footerEmail" class="sr-only">Email address</label>
+          <input id="footerEmail" type="email" required placeholder="you@example.com" class="flex-1 rounded-lg bg-sand/10 border border-sand/20 px-3 py-2.5 text-sand placeholder:text-sand/50"/>
+          <button type="submit" class="bg-gold text-ink font-semibold px-4 py-2.5 rounded-lg hover:bg-gold-deep hover:text-white transition-colors">Subscribe</button>
+        </form>
+        <a href="mhlc-give.html" class="mt-5 inline-flex items-center gap-2 donate-cta text-white font-semibold px-5 py-2.5 rounded-full">Donate</a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-sand/15 text-xs text-sand/60 flex flex-wrap items-center justify-between gap-3">
+      <p>© <span id="year">2026</span> Wood County Health Care Foundation. All rights reserved.</p>
+      <p>Prototype · companion to <code class="font-mono">mhlc-homepage test.html</code></p>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('contactForm');
+  var label = document.getElementById('submitLabel');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    label.textContent = 'Thank you · your message is in the queue';
+    form.querySelector('button').disabled = true;
+    // To wire up real delivery, point form.action at a Formspree, Zapier, or
+    // foundation CRM endpoint and remove this preventDefault handler.
+  });
+
+  (function () {
+    var prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nodes = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (prefersReduce || typeof IntersectionObserver !== 'function') {
+      nodes.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    nodes.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
