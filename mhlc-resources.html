@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0F4C4A" />
+<title>Resources · Memory Health Life Center</title>
+<meta name="description" content="Curated, trusted resources for dementia caregivers and East Texas families — 24/7 helplines, local support, national organizations, and education." />
+<meta property="og:title" content="Resources · Memory Health Life Center" />
+<meta property="og:description" content="A curated set of trusted resources for dementia caregivers and families — hotlines, local support, education, and research." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    { DEFAULT: '#1F2421', soft: '#3B433E', mute: '#6C736E' },
+          sand:   { DEFAULT: '#F7F2EA', deep: '#EFE6D7', card: '#FBF8F2' },
+          teal:   { DEFAULT: '#0F4C4A', deep: '#0A3A39', soft: '#1A6A66', pale: '#D8E6E4' },
+          clay:   { DEFAULT: '#B8553A', deep: '#8E3F2A', pale: '#F2D7CC' },
+          gold:   { DEFAULT: '#D4A04F', deep: '#A5772E', pale: '#F4E4C1' },
+          sage:   { DEFAULT: '#6F9C7A', deep: '#4F7559', pale: '#DCE9DE' },
+        },
+        fontFamily: {
+          serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+          sans:  ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        },
+        boxShadow: {
+          'soft': '0 1px 2px rgba(15,76,74,0.06), 0 8px 24px rgba(15,76,74,0.06)',
+          'lift': '0 2px 4px rgba(15,76,74,0.08), 0 16px 40px rgba(15,76,74,0.10)',
+        },
+        maxWidth: { 'prose-tight': '62ch' },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #F7F2EA; color: #1F2421; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; font-feature-settings: "kern", "liga"; }
+  *:focus-visible { outline: 3px solid #D4A04F; outline-offset: 3px; border-radius: 6px; }
+  .skip-link { position: absolute; left: -9999px; top: 12px; background: #0F4C4A; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 600; }
+  .skip-link:focus { left: 12px; z-index: 100; }
+  .donate-cta { background: #B8553A; }
+  .donate-cta:hover { background: #8E3F2A; }
+  .marker-line { width: 56px; height: 3px; background: #D4A04F; border-radius: 2px; }
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #0A3A39;
+    background-image:
+      linear-gradient(95deg, rgba(15,76,74,0.95) 0%, rgba(15,76,74,0.88) 25%, rgba(15,76,74,0.55) 50%, rgba(15,76,74,0.18) 75%, rgba(15,76,74,0.05) 100%),
+      linear-gradient(180deg, rgba(10,58,57,0.12) 0%, rgba(10,58,57,0.28) 100%),
+      radial-gradient(circle at 80% 30%, rgba(212,160,79,0.18) 0%, rgba(212,160,79,0) 60%),
+      linear-gradient(180deg, #0F4C4A 0%, #0A3A39 100%);
+  }
+  .page-hero .hero-content > * { max-width: 56ch; }
+
+  .resource-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #FBF8F2;
+    border: 1px solid #EFE6D7;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(15,76,74,0.06), 0 8px 24px rgba(15,76,74,0.06);
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms;
+  }
+  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(15,76,74,0.08), 0 16px 40px rgba(15,76,74,0.10); }
+  .resource-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .resource-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .tag-hotline   { background: #F2D7CC; color: #8E3F2A; }
+  .tag-local     { background: #DCE9DE; color: #4F7559; }
+  .tag-national  { background: #D8E6E4; color: #0A3A39; }
+  .tag-education { background: #F4E4C1; color: #A5772E; }
+
+  .resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0A3A39;
+    transition: color 160ms;
+  }
+  .resource-link:hover { color: #B8553A; }
+  .resource-link svg { transition: transform 160ms; }
+  .resource-link:hover svg { transform: translateX(2px); }
+
+  .phone-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 9999px;
+    background: #0F4C4A;
+    color: #FBF8F2;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 160ms;
+  }
+  .phone-call:hover { background: #0A3A39; }
+
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-stagger > * {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-stagger.is-visible > * { opacity: 1; transform: none; }
+  .reveal-stagger.is-visible > *:nth-child(1) { transition-delay:  60ms; }
+  .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 180ms; }
+  .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 300ms; }
+  .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 420ms; }
+  .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 540ms; }
+  .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 660ms; }
+
+  .hero-content > * {
+    opacity: 0; transform: translateY(14px);
+    animation: heroIn 1200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-content > :nth-child(1) { animation-delay: 180ms; }
+  .hero-content > :nth-child(2) { animation-delay: 340ms; }
+  .hero-content > :nth-child(3) { animation-delay: 500ms; }
+  .hero-content > :nth-child(4) { animation-delay: 660ms; }
+  .hero-content > :nth-child(5) { animation-delay: 820ms; }
+  @keyframes heroIn { to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .reveal-stagger > *, .hero-content > * {
+      opacity: 1 !important; transform: none !important;
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="bg-ink text-sand text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+    <span><strong class="font-semibold">Prototype</strong> · Resources · Memory Health Life Center</span>
+    <span class="text-sand/70">A project of the Wood County Health Care Foundation</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-sand/95 backdrop-blur supports-[backdrop-filter]:bg-sand/80 border-b border-sand-deep">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-16 lg:h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="mhlc-homepage test.html" aria-label="Memory Health Life Center, home" class="shrink-0">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-teal text-sand font-serif font-semibold text-lg">M</span>
+        </a>
+        <div class="leading-tight">
+          <a href="mhlc-homepage test.html" class="block font-serif font-semibold text-ink text-lg hover:text-teal-deep">Memory Health Life Center</a>
+          <a href="mhlc-foundation.html" class="block text-[11px] uppercase tracking-[0.14em] text-ink-mute hover:text-teal underline decoration-clay/40 decoration-1 underline-offset-[3px] hover:decoration-clay">A project of the Wood County Health Care Foundation</a>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-ink-soft" aria-label="Primary">
+        <a href="mhlc-homepage test.html#vision" class="hover:text-teal">The Project</a>
+        <a href="mhlc-homepage test.html#need" class="hover:text-teal">The Need</a>
+        <a href="mhlc-homepage test.html#progress" class="hover:text-teal">Progress</a>
+        <a href="mhlc-homepage test.html#families" class="hover:text-teal">Families</a>
+        <a href="mhlc-homepage test.html#partners" class="hover:text-teal">Partners</a>
+        <a href="mhlc-foundation.html" class="hover:text-teal">Foundation</a>
+        <a href="mhlc-homepage test.html#contact" class="hover:text-teal">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="mhlc-give.html" class="hidden sm:inline-flex donate-cta text-white font-semibold px-5 py-2.5 rounded-full shadow-soft transition-colors">Donate</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="page-hero text-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 hero-content">
+    <p class="text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-gold-pale">
+      <a href="mhlc-homepage test.html" class="hover:text-white">Home</a>
+      <span class="text-sand/40 mx-1">/</span>
+      <span class="text-sand">Resources</span>
+    </p>
+    <h1 class="mt-5 font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+      Trusted help, when you need it.
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-sand/85 max-w-prose-tight">
+      A curated set of resources for dementia caregivers and East Texas families — 24/7 helplines, local support, national organizations, and education. We've vetted every link so you don't have to.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3" style="max-width: none;">
+      <a href="#crisis" class="donate-cta text-white font-semibold px-6 py-3 rounded-full shadow-lift whitespace-nowrap">Get help now</a>
+      <a href="#local" class="inline-flex items-center gap-2 bg-sand text-teal-deep font-semibold px-6 py-3 rounded-full hover:bg-white whitespace-nowrap">
+        Find local support
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CRISIS / HOTLINE -->
+<section id="crisis" class="py-12 sm:py-16 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-clay-deep text-sand p-7 sm:p-10 shadow-lift reveal">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7">
+          <p class="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-gold-pale">24 / 7 · Free · Confidential</p>
+          <h2 class="mt-3 font-serif font-semibold text-3xl sm:text-4xl leading-tight">
+            Need to talk to someone right now?
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-sand/90 leading-relaxed max-w-prose-tight">
+            The Alzheimer's Association 24/7 Helpline is staffed day and night by trained, master's-level clinicians. They handle crisis calls, referrals to local community programs, dementia-related education, and emotional support — in your preferred language through their interpreter service.
+          </p>
+        </div>
+        <div class="lg:col-span-5 lg:text-right">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gold-pale">Call the Helpline</p>
+          <a href="tel:+18002723900" class="mt-2 inline-flex items-center gap-3 bg-sand text-clay-deep font-serif font-semibold text-3xl sm:text-4xl px-6 py-4 rounded-2xl hover:bg-white transition-colors">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+            800.272.3900
+          </a>
+          <p class="mt-3 text-sm text-sand/75 lg:text-right">Operated by the Alzheimer's Association</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- START HERE -->
+<section class="pb-4 sm:pb-6 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-teal-deep text-sand p-7 sm:p-8 shadow-soft reveal">
+      <div class="grid sm:grid-cols-12 gap-6 items-start">
+        <div class="sm:col-span-2">
+          <span class="resource-icon bg-gold-pale text-teal-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </span>
+        </div>
+        <div class="sm:col-span-10">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gold-pale">Start here</p>
+          <h3 class="mt-2 font-serif text-xl sm:text-2xl font-semibold">Quick Brief: Dementia</h3>
+          <p class="mt-2 text-sm sm:text-base text-sand/85 leading-relaxed max-w-prose-tight">
+            New to a dementia diagnosis? Begin with the National Institutes of Health's plain-language overview — what dementia is, how it progresses, what treatments exist, and where research is heading.
+          </p>
+          <a href="https://medlineplus.gov/dementia.html" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-pale hover:text-white">
+            Read the overview on MedlinePlus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL & REGIONAL -->
+<section id="local" class="py-16 sm:py-20 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Local & Regional</p>
+      <div class="marker-line mt-3"></div>
+      <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">
+        Help that's close to home.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-ink-soft leading-relaxed">
+        East Texas-based and Texas-wide organizations with caregiver programs, in-person support groups, and referrals. Call them first — they know the local landscape.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-5 reveal-stagger">
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-sage-pale text-sage-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span class="resource-tag tag-local">Local · Tyler</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">Alzheimer's Alliance of Smith County</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">Tyler-based nonprofit providing caregiver education, support groups, respite resources, and family consultations across the East Texas region.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="tel:+19035098323" class="phone-call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+            903.509.8323
+          </a>
+          <a href="https://alzalliance.org" target="_blank" rel="noopener" class="resource-link">
+            Visit website
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-sage-pale text-sage-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-4v-7H10v7H6a2 2 0 0 1-2-2z"/></svg>
+          </span>
+          <span class="resource-tag tag-local">State · Texas</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">Texas Health and Human Services</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">State-level access to long-term care benefits, the Aging and Disability Resource Center, Area Agencies on Aging, and Medicaid programs that may apply to your family.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="tel:+12114" class="phone-call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+            Call 2-1-1 in Texas
+          </a>
+          <a href="https://www.hhs.texas.gov" target="_blank" rel="noopener" class="resource-link">
+            Visit website
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- NATIONAL ORGANIZATIONS -->
+<section id="national" class="py-16 sm:py-20 bg-sand-deep/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">National Organizations</p>
+      <div class="marker-line mt-3"></div>
+      <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">
+        The trusted nationwide network.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-ink-soft leading-relaxed">
+        Decades of dementia research, advocacy, and family support — built and stewarded by these national organizations.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5 reveal-stagger">
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-teal-pale text-teal-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span class="resource-tag tag-national">National</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">Alzheimer's Association</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">The country's leading voluntary health organization for Alzheimer's care, support, and research. Programs and support services connect you with peers and professionals to make the plans and adjustments necessary for the road ahead.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="tel:+18002723900" class="phone-call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+            800.272.3900
+          </a>
+          <a href="https://www.alz.org" target="_blank" rel="noopener" class="resource-link">
+            Visit website
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-teal-pale text-teal-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          </span>
+          <span class="resource-tag tag-national">National</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">BrightFocus Foundation</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">Funds groundbreaking research toward cures for Alzheimer's disease, macular degeneration, and glaucoma, and publishes expert family-facing information on each.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="https://www.brightfocus.org/alzheimers" target="_blank" rel="noopener" class="resource-link">
+            Visit website
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-teal-pale text-teal-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </span>
+          <span class="resource-tag tag-national">National</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">The Hearthstone Institute</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1"><em>I'm Still Here</em>® — the philosophy and practice behind Hearthstone's nationally recognized approach to dementia care. Grounded in the belief that people living with dementia remain whole, present, and able to grow.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="https://www.thehearth.org" target="_blank" rel="noopener" class="resource-link">
+            Visit website
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & RESEARCH -->
+<section id="education" class="py-16 sm:py-20 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Education & Research</p>
+      <div class="marker-line mt-3"></div>
+      <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">
+        Learn the landscape.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-ink-soft leading-relaxed">
+        Government and academic information — plain-language explainers, current research, and a short film that captures what good dementia care can look like.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5 reveal-stagger">
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-gold-pale text-gold-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </span>
+          <span class="resource-tag tag-education">Education</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">MedlinePlus</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">U.S. National Library of Medicine site with patient-facing information on dementia, Alzheimer's, related conditions, and clinical support services — written for families, not specialists.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="https://medlineplus.gov/dementia.html" target="_blank" rel="noopener" class="resource-link">
+            Read about dementia
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-gold-pale text-gold-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <span class="resource-tag tag-education">Research</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">What is dementia — treatment, prognosis, research</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">A deeper dive into what's currently known about dementia: the underlying biology, treatment options, expected progression, and the most active research questions.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="https://medlineplus.gov/dementia.html" target="_blank" rel="noopener" class="resource-link">
+            Open the research brief
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <div class="flex items-start justify-between gap-4">
+          <span class="resource-icon bg-clay-pale text-clay-deep" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </span>
+          <span class="resource-tag tag-education">Must watch</span>
+        </div>
+        <h3 class="mt-5 font-serif text-xl font-semibold text-ink">Abe's Garden</h3>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed flex-1">A short film about Abe's Garden Community in Nashville — one of the U.S. models for what we're building in Quitman. Twenty minutes that changes how you imagine a memory care home.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="https://www.abesgarden.org" target="_blank" rel="noopener" class="resource-link">
+            Watch the film
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE / DISCLAIMER -->
+<section class="py-16 sm:py-20 bg-teal text-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-7 reveal">
+        <p class="text-sm font-semibold text-gold-pale uppercase tracking-[0.18em]">A note from the Foundation</p>
+        <div class="marker-line mt-3"></div>
+        <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight">
+          We've vetted every link.
+        </h2>
+        <p class="mt-5 text-lg text-sand/85 leading-relaxed max-w-prose-tight">
+          These resources are pulled from the same shelf the Wood County Health Care Foundation team uses when families call us directly. They aren't a substitute for a doctor or a social worker — they're a place to start.
+        </p>
+        <p class="mt-4 text-base text-sand/80 leading-relaxed max-w-prose-tight">
+          If you don't see what you need, call us at <a href="tel:+19037609224" class="font-semibold text-white underline decoration-gold/50 underline-offset-4 hover:decoration-gold">(903) 760-9224</a> or use our contact form and we'll point you the right direction.
+        </p>
+      </div>
+
+      <aside class="lg:col-span-5 reveal">
+        <div class="rounded-2xl bg-sand/5 border border-sand/15 p-6 sm:p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-gold-pale">Reach the Foundation directly</p>
+          <h3 class="mt-2 font-serif text-xl font-semibold">Wood County Health Care Foundation</h3>
+          <address class="mt-3 not-italic text-sm text-sand/85 leading-relaxed">
+            405 East Lipscomb St.<br/>
+            Quitman, TX 75783
+          </address>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-sand/10" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+              </span>
+              <a href="tel:+19037609224" class="hover:text-white font-semibold">(903) 760-9224</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-sand/10" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              </span>
+              <a href="mhlc-homepage test.html#contact" class="hover:text-white font-semibold">Submit our contact form</a>
+            </li>
+          </ul>
+          <p class="mt-5 text-xs text-sand/65">
+            501(c)(3) · EIN 75-2309177
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-sand/85">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-teal text-sand font-serif font-semibold text-lg">M</span>
+          <span class="leading-tight">
+            <span class="block font-serif font-semibold text-sand text-lg">Memory Health Life Center</span>
+            <span class="block text-[11px] uppercase tracking-[0.14em] text-sand/60">Wood County Health Care Foundation</span>
+          </span>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed max-w-md">A 54-bed, Hogeweyk-inspired memory care campus for East Texas, in Quitman, Texas. Stewarded by the Wood County Health Care Foundation, a 501(c)(3) charitable organization.</p>
+        <p class="mt-5 text-xs text-sand/60">EIN <span class="font-mono">75-2309177</span></p>
+      </div>
+
+      <nav class="md:col-span-3" aria-label="Footer nav">
+        <p class="text-xs font-semibold uppercase tracking-wider text-sand/70">Explore</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="mhlc-resources.html" class="hover:text-white" aria-current="page">Resources</a></li>
+          <li><a href="mhlc-give.html" class="hover:text-white">Donate</a></li>
+          <li><a href="mhlc-contributors.html" class="hover:text-white">Honor roll</a></li>
+          <li><a href="mhlc-foundation.html" class="hover:text-white">About the Foundation</a></li>
+          <li><a href="mhlc-homepage test.html#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-4">
+        <p class="text-xs font-semibold uppercase tracking-wider text-sand/70">Stay informed</p>
+        <p class="mt-3 text-sm">Monthly progress updates from the Foundation.</p>
+        <form class="mt-4 flex gap-2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you';">
+          <label for="footerEmail" class="sr-only">Email address</label>
+          <input id="footerEmail" type="email" required placeholder="you@example.com" class="flex-1 rounded-lg bg-sand/10 border border-sand/20 px-3 py-2.5 text-sand placeholder:text-sand/50"/>
+          <button type="submit" class="bg-gold text-ink font-semibold px-4 py-2.5 rounded-lg hover:bg-gold-deep hover:text-white transition-colors">Subscribe</button>
+        </form>
+        <a href="mhlc-give.html" class="mt-5 inline-flex items-center gap-2 donate-cta text-white font-semibold px-5 py-2.5 rounded-full">Donate</a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-sand/15 text-xs text-sand/60 flex flex-wrap items-center justify-between gap-3">
+      <p>© <span id="year">2026</span> Wood County Health Care Foundation. All rights reserved.</p>
+      <p>Prototype · companion to <code class="font-mono">mhlc-homepage test.html</code></p>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nodes = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (prefersReduce || typeof IntersectionObserver !== 'function') {
+      nodes.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    nodes.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
