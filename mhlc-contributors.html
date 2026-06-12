@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0F4C4A" />
+<title>Honor Roll · Memory Health Life Center</title>
+<meta name="description" content="The families, individuals, and organizations whose founding gifts made the Memory Health Life Center possible. Stewarded by the Wood County Health Care Foundation." />
+<meta property="og:title" content="Honor Roll · Memory Health Life Center" />
+<meta property="og:description" content="The founding contributors who built this campaign — gift by gift." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    { DEFAULT: '#1F2421', soft: '#3B433E', mute: '#6C736E' },
+          sand:   { DEFAULT: '#F7F2EA', deep: '#EFE6D7', card: '#FBF8F2' },
+          teal:   { DEFAULT: '#0F4C4A', deep: '#0A3A39', soft: '#1A6A66', pale: '#D8E6E4' },
+          clay:   { DEFAULT: '#B8553A', deep: '#8E3F2A', pale: '#F2D7CC' },
+          gold:   { DEFAULT: '#D4A04F', deep: '#A5772E', pale: '#F4E4C1' },
+          sage:   { DEFAULT: '#6F9C7A', deep: '#4F7559', pale: '#DCE9DE' },
+        },
+        fontFamily: {
+          serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+          sans:  ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        },
+        boxShadow: {
+          'soft': '0 1px 2px rgba(15,76,74,0.06), 0 8px 24px rgba(15,76,74,0.06)',
+          'lift': '0 2px 4px rgba(15,76,74,0.08), 0 16px 40px rgba(15,76,74,0.10)',
+        },
+        maxWidth: { 'prose-tight': '62ch' },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #F7F2EA; color: #1F2421; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; font-feature-settings: "kern", "liga"; }
+  *:focus-visible { outline: 3px solid #D4A04F; outline-offset: 3px; border-radius: 6px; }
+  .skip-link { position: absolute; left: -9999px; top: 12px; background: #0F4C4A; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 600; }
+  .skip-link:focus { left: 12px; z-index: 100; }
+  .donate-cta { background: #B8553A; }
+  .donate-cta:hover { background: #8E3F2A; }
+  .marker-line { width: 56px; height: 3px; background: #D4A04F; border-radius: 2px; }
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #0A3A39;
+    background-image:
+      linear-gradient(95deg, rgba(15,76,74,0.95) 0%, rgba(15,76,74,0.88) 25%, rgba(15,76,74,0.55) 50%, rgba(15,76,74,0.18) 75%, rgba(15,76,74,0.05) 100%),
+      linear-gradient(180deg, rgba(10,58,57,0.12) 0%, rgba(10,58,57,0.28) 100%),
+      radial-gradient(circle at 80% 30%, rgba(212,160,79,0.18) 0%, rgba(212,160,79,0) 60%),
+      linear-gradient(180deg, #0F4C4A 0%, #0A3A39 100%);
+  }
+  .page-hero .hero-content > * { max-width: 56ch; }
+
+  /* Honor card */
+  .honor-card {
+    position: relative;
+    border-radius: 14px;
+    background: #FBF8F2;
+    border: 1px solid #EFE6D7;
+    padding: 1rem 1.1rem;
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms;
+  }
+  .honor-card:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(15,76,74,0.08), 0 12px 24px rgba(15,76,74,0.08); }
+  .honor-card .name { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; color: #1F2421; }
+  .honor-card.feature {
+    background: linear-gradient(180deg, #FBF8F2 0%, #F4E4C1 100%);
+    border-color: #D4A04F;
+    padding: 1.25rem 1.25rem;
+  }
+  .honor-card.feature .name { color: #8E3F2A; }
+  .founder-mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1.1rem; height: 1.1rem; border-radius: 9999px;
+    background: #D4A04F; color: #1F2421;
+    font-size: 0.65rem; font-weight: 700; margin-left: 0.4rem;
+  }
+
+  /* Animations */
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-stagger > * {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-stagger.is-visible > * { opacity: 1; transform: none; }
+  .reveal-stagger.is-visible > *:nth-child(1)  { transition-delay:  40ms; }
+  .reveal-stagger.is-visible > *:nth-child(2)  { transition-delay: 100ms; }
+  .reveal-stagger.is-visible > *:nth-child(3)  { transition-delay: 160ms; }
+  .reveal-stagger.is-visible > *:nth-child(4)  { transition-delay: 220ms; }
+  .reveal-stagger.is-visible > *:nth-child(5)  { transition-delay: 280ms; }
+  .reveal-stagger.is-visible > *:nth-child(6)  { transition-delay: 340ms; }
+  .reveal-stagger.is-visible > *:nth-child(7)  { transition-delay: 400ms; }
+  .reveal-stagger.is-visible > *:nth-child(8)  { transition-delay: 460ms; }
+  .reveal-stagger.is-visible > *:nth-child(9)  { transition-delay: 500ms; }
+  .reveal-stagger.is-visible > *:nth-child(10) { transition-delay: 540ms; }
+  .reveal-stagger.is-visible > *:nth-child(n+11) { transition-delay: 580ms; }
+
+  .hero-content > * {
+    opacity: 0; transform: translateY(14px);
+    animation: heroIn 1200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-content > :nth-child(1) { animation-delay: 180ms; }
+  .hero-content > :nth-child(2) { animation-delay: 340ms; }
+  .hero-content > :nth-child(3) { animation-delay: 500ms; }
+  .hero-content > :nth-child(4) { animation-delay: 660ms; }
+  .hero-content > :nth-child(5) { animation-delay: 820ms; }
+  @keyframes heroIn { to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .reveal-stagger > *, .hero-content > * {
+      opacity: 1 !important; transform: none !important;
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="bg-ink text-sand text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+    <span><strong class="font-semibold">Prototype</strong> · Honor Roll · Wood County Health Care Foundation</span>
+    <span class="text-sand/70">501(c)(3) · EIN <span class="font-mono">75-2309177</span></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-sand/95 backdrop-blur supports-[backdrop-filter]:bg-sand/80 border-b border-sand-deep">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-16 lg:h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="mhlc-homepage test.html" aria-label="Memory Health Life Center, home" class="shrink-0">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-teal text-sand font-serif font-semibold text-lg">M</span>
+        </a>
+        <div class="leading-tight">
+          <a href="mhlc-homepage test.html" class="block font-serif font-semibold text-ink text-lg hover:text-teal-deep">Memory Health Life Center</a>
+          <a href="mhlc-foundation.html" class="block text-[11px] uppercase tracking-[0.14em] text-ink-mute hover:text-teal underline decoration-clay/40 decoration-1 underline-offset-[3px] hover:decoration-clay">A project of the Wood County Health Care Foundation</a>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-ink-soft" aria-label="Primary">
+        <a href="mhlc-homepage test.html#vision" class="hover:text-teal">The Project</a>
+        <a href="mhlc-homepage test.html#need" class="hover:text-teal">The Need</a>
+        <a href="mhlc-homepage test.html#progress" class="hover:text-teal">Progress</a>
+        <a href="mhlc-homepage test.html#families" class="hover:text-teal">Families</a>
+        <a href="mhlc-homepage test.html#partners" class="hover:text-teal">Partners</a>
+        <a href="mhlc-foundation.html" class="hover:text-teal">Foundation</a>
+        <a href="mhlc-homepage test.html#contact" class="hover:text-teal">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="mhlc-give.html" class="hidden sm:inline-flex donate-cta text-white font-semibold px-5 py-2.5 rounded-full shadow-soft transition-colors">Donate</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="page-hero text-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 hero-content">
+    <p class="text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-gold-pale">
+      <a href="mhlc-homepage test.html" class="hover:text-white">Home</a>
+      <span class="text-sand/40 mx-1">/</span>
+      <a href="mhlc-give.html" class="hover:text-white">Give</a>
+      <span class="text-sand/40 mx-1">/</span>
+      <span class="text-sand">Honor Roll</span>
+    </p>
+    <h1 class="mt-5 font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+      Built, gift by gift.
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-sand/85 max-w-prose-tight">
+      The families, individuals, and organizations whose founding contributions made the Memory Health Life Center possible. We are honored to recognize each of them.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3" style="max-width: none;">
+      <a href="mhlc-give.html" class="donate-cta text-white font-semibold px-6 py-3 rounded-full shadow-lift whitespace-nowrap">Join them — give now</a>
+      <a href="#founders" class="inline-flex items-center gap-2 bg-sand text-teal-deep font-semibold px-6 py-3 rounded-full hover:bg-white whitespace-nowrap">
+        See the honor roll
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- $10,000+ TIER -->
+<section id="founders" class="py-16 sm:py-24 bg-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-5 reveal">
+        <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Founding Circle</p>
+        <div class="marker-line mt-3"></div>
+        <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl lg:text-5xl leading-tight text-ink">
+          Organizations & individuals — $10,000 or more.
+        </h2>
+        <p class="mt-5 text-base text-ink-soft leading-relaxed">
+          These founding contributors stepped forward at the very beginning. Their leadership unlocked the federal earmark, attracted regional partners, and set the campaign in motion.
+        </p>
+        <p class="mt-4 text-xs text-ink-mute">
+          <span class="founder-mark" aria-hidden="true">★</span>
+          <span class="ml-2">Founders Circle — recognized for leadership-level early gifts.</span>
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <ul class="grid sm:grid-cols-2 gap-3 reveal-stagger">
+          <li class="honor-card feature">
+            <p class="name text-lg">Wood County Hospital District<span class="founder-mark" aria-hidden="true">★</span></p>
+            <p class="mt-1 text-xs text-ink-mute uppercase tracking-wider">Public partner</p>
+          </li>
+          <li class="honor-card feature">
+            <p class="name text-lg">Wood County Economic Development Commission<span class="founder-mark" aria-hidden="true">★</span></p>
+            <p class="mt-1 text-xs text-ink-mute uppercase tracking-wider">Public partner</p>
+          </li>
+          <li class="honor-card feature">
+            <p class="name text-lg">Quitman Development Corporation<span class="founder-mark" aria-hidden="true">★</span></p>
+            <p class="mt-1 text-xs text-ink-mute uppercase tracking-wider">Public partner</p>
+          </li>
+          <li class="honor-card feature">
+            <p class="name text-lg">Wood County Electric Foundation<span class="founder-mark" aria-hidden="true">★</span></p>
+            <p class="mt-1 text-xs text-ink-mute uppercase tracking-wider">Community foundation</p>
+          </li>
+          <li class="honor-card feature sm:col-span-2">
+            <p class="name text-lg">Carolyn Manning<span class="founder-mark" aria-hidden="true">★</span></p>
+            <p class="mt-1 text-xs text-ink-mute uppercase tracking-wider">Founding individual gift</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- $1,000+ TIER -->
+<section class="py-16 sm:py-24 bg-sand-deep/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Builders</p>
+      <div class="marker-line mt-3"></div>
+      <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">
+        Individuals — $1,000 or more.
+      </h2>
+      <p class="mt-5 text-base text-ink-soft leading-relaxed">
+        Neighbors, families, and friends of the foundation whose gifts brought this campaign from idea to construction-ready. Listed alphabetically by household.
+      </p>
+    </div>
+
+    <ul class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 reveal-stagger">
+      <li class="honor-card"><p class="name">Art &amp; Jan Albin</p></li>
+      <li class="honor-card"><p class="name">Chuck &amp; Donna Holt</p></li>
+      <li class="honor-card"><p class="name">Darrell &amp; Debby Slabaugh</p></li>
+      <li class="honor-card"><p class="name">Troy &amp; Debbie Robinson</p></li>
+      <li class="honor-card"><p class="name">Randy &amp; Teresa Dunn</p></li>
+      <li class="honor-card"><p class="name">Gary &amp; Annette Simpkins</p></li>
+      <li class="honor-card"><p class="name">Wayne Lindsay</p></li>
+      <li class="honor-card"><p class="name">John T. Wright</p></li>
+      <li class="honor-card"><p class="name">Randy Vest</p></li>
+      <li class="honor-card"><p class="name">Orval Lindsey</p></li>
+      <li class="honor-card"><p class="name">Larry &amp; Connie Bowman</p></li>
+      <li class="honor-card"><p class="name">Steven Steele</p></li>
+      <li class="honor-card"><p class="name">Joy Childress</p></li>
+      <li class="honor-card"><p class="name">Rev. Bill Hedges</p></li>
+      <li class="honor-card"><p class="name">Brenda Hunter</p></li>
+      <li class="honor-card"><p class="name">Pepper Aasgaard</p></li>
+      <li class="honor-card"><p class="name">Sue Williams</p></li>
+      <li class="honor-card"><p class="name">Patricia Hendricks</p></li>
+    </ul>
+
+    <p class="mt-8 text-xs text-ink-mute italic">
+      List reflects publicly recognized contributors as of mid-2024. To update or correct your listing, please <a href="mhlc-homepage test.html#contact" class="underline decoration-clay/40 underline-offset-2 hover:decoration-clay">contact the foundation</a>.
+    </p>
+  </div>
+</section>
+
+<!-- STEWARDSHIP STATEMENT -->
+<section class="py-16 sm:py-20 bg-teal text-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-7 reveal">
+        <p class="text-sm font-semibold text-gold-pale uppercase tracking-[0.18em]">Stewardship</p>
+        <div class="marker-line mt-3"></div>
+        <h2 class="mt-5 font-serif font-semibold text-3xl sm:text-4xl leading-tight">
+          Every contribution matters.
+        </h2>
+        <p class="mt-5 text-lg text-sand/85 leading-relaxed max-w-prose-tight">
+          Each and every contribution is important as the Wood County Health Care Foundation, a 501(c)(3) not-for-profit, creates this one-of-a-kind education, research, and living laboratory facility adjacent to the Quitman hospital.
+        </p>
+        <p class="mt-4 text-base text-sand/80 leading-relaxed max-w-prose-tight">
+          Total projected costs are in excess of $60,000,000 and every philanthropic, tax-deductible contribution brings us closer to our goal. Major contributors will have options for naming recognition, so please give prayerful consideration with your support. It is a great way to honor a loved one who has dementia or Alzheimer's.
+        </p>
+      </div>
+
+      <aside class="lg:col-span-5 reveal">
+        <div class="rounded-2xl bg-sand/5 border border-sand/15 p-6 sm:p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-gold-pale">Talk with us first</p>
+          <h3 class="mt-2 font-serif text-xl font-semibold">A team of advisors</h3>
+          <p class="mt-3 text-sm text-sand/85 leading-relaxed">
+            We encourage you to visit with our team of advisors when considering a gift, so we may be the best steward possible for your act of kindness.
+          </p>
+          <address class="mt-5 not-italic text-sm text-sand/85 leading-relaxed">
+            Wood County Health Care Foundation<br/>
+            405 East Lipscomb St.<br/>
+            Quitman, TX 75783
+          </address>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-sand/10" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.86 19.86 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .75 1z"/></svg>
+              </span>
+              <a href="tel:+19037609224" class="hover:text-white font-semibold">(903) 760-9224</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-sand/10" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              </span>
+              <a href="mhlc-homepage test.html#contact" class="hover:text-white font-semibold">Submit our contact form</a>
+            </li>
+          </ul>
+          <p class="mt-5 text-xs text-sand/65">
+            Wood County Health Care Foundation · 501(c)(3) · EIN 75-2309177
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-16 sm:py-20 bg-sand">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+    <p class="text-sm font-semibold text-clay uppercase tracking-[0.18em]">Add your name</p>
+    <h2 class="mt-3 font-serif font-semibold text-3xl sm:text-4xl leading-tight text-ink">
+      Honor a loved one. Build something lasting.
+    </h2>
+    <p class="mt-5 text-lg text-ink-soft leading-relaxed">
+      Gifts in memory, gifts in honor, and gifts from corporations, foundations, and trusts are deeply meaningful to our work. Every contribution moves the Memory Health Life Center closer to opening day.
+    </p>
+    <div class="mt-7 flex flex-wrap justify-center gap-3">
+      <a href="mhlc-give.html" class="donate-cta text-white font-semibold px-6 py-3 rounded-full shadow-lift">Give now</a>
+      <a href="mhlc-give.html#other-ways" class="bg-sand-deep text-ink font-semibold px-6 py-3 rounded-full hover:bg-sand">Other ways to give</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-sand/85">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-teal text-sand font-serif font-semibold text-lg">M</span>
+          <span class="leading-tight">
+            <span class="block font-serif font-semibold text-sand text-lg">Memory Health Life Center</span>
+            <span class="block text-[11px] uppercase tracking-[0.14em] text-sand/60">Wood County Health Care Foundation</span>
+          </span>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed max-w-md">A 54-bed, Hogeweyk-inspired memory care campus for East Texas, in Quitman, Texas. Stewarded by the Wood County Health Care Foundation, a 501(c)(3) charitable organization.</p>
+        <p class="mt-5 text-xs text-sand/60">EIN <span class="font-mono">75-2309177</span></p>
+      </div>
+
+      <nav class="md:col-span-3" aria-label="Footer nav">
+        <p class="text-xs font-semibold uppercase tracking-wider text-sand/70">Give</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="mhlc-give.html" class="hover:text-white">Donate</a></li>
+          <li><a href="mhlc-give.html#other-ways" class="hover:text-white">Other ways to give</a></li>
+          <li><a href="mhlc-contributors.html" class="hover:text-white" aria-current="page">Honor roll</a></li>
+          <li><a href="mhlc-homepage test.html#contact" class="hover:text-white">Talk about a major gift</a></li>
+          <li><a href="mhlc-foundation.html" class="hover:text-white">About the Foundation</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-4">
+        <p class="text-xs font-semibold uppercase tracking-wider text-sand/70">Stay informed</p>
+        <p class="mt-3 text-sm">Monthly progress updates from the Foundation.</p>
+        <form class="mt-4 flex gap-2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you';">
+          <label for="footerEmail" class="sr-only">Email address</label>
+          <input id="footerEmail" type="email" required placeholder="you@example.com" class="flex-1 rounded-lg bg-sand/10 border border-sand/20 px-3 py-2.5 text-sand placeholder:text-sand/50"/>
+          <button type="submit" class="bg-gold text-ink font-semibold px-4 py-2.5 rounded-lg hover:bg-gold-deep hover:text-white transition-colors">Subscribe</button>
+        </form>
+        <a href="mhlc-give.html" class="mt-5 inline-flex items-center gap-2 donate-cta text-white font-semibold px-5 py-2.5 rounded-full">Donate</a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-sand/15 text-xs text-sand/60 flex flex-wrap items-center justify-between gap-3">
+      <p>© <span id="year">2026</span> Wood County Health Care Foundation. All rights reserved.</p>
+      <p>Prototype · companion to <code class="font-mono">mhlc-homepage test.html</code></p>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nodes = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (prefersReduce || typeof IntersectionObserver !== 'function') {
+      nodes.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    nodes.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
