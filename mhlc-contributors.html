@@ -54,10 +54,16 @@
     isolation: isolate;
     background-color: #0A3A39;
     background-image:
+      /* Left-to-right teal wash: dense on the left for headline contrast,
+         fading to a thin tint on the right so the photo carries the
+         golden-hour mood through. */
       linear-gradient(95deg, rgba(15,76,74,0.95) 0%, rgba(15,76,74,0.88) 25%, rgba(15,76,74,0.55) 50%, rgba(15,76,74,0.18) 75%, rgba(15,76,74,0.05) 100%),
       linear-gradient(180deg, rgba(10,58,57,0.12) 0%, rgba(10,58,57,0.28) 100%),
-      radial-gradient(circle at 80% 30%, rgba(212,160,79,0.18) 0%, rgba(212,160,79,0) 60%),
+      url('assets/contributors-hero-web.jpg'),
       linear-gradient(180deg, #0F4C4A 0%, #0A3A39 100%);
+    background-size: cover, cover, cover, cover;
+    background-position: center, center, center right, center;
+    background-repeat: no-repeat;
   }
   .page-hero .hero-content > * { max-width: 56ch; }
 
