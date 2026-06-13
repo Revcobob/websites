@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Spire -->
+    <line x1="300" y1="20" x2="300" y2="50"/>
+    <circle cx="300" cy="56" r="6" fill="currentColor" fill-opacity="0.25" stroke="none"/>
+    <line x1="300" y1="62" x2="300" y2="80"/>
+    <!-- Upper dome -->
+    <path d="M210 200c0-60 40-100 90-100s90 40 90 100"/>
+    <path d="M230 200c0-50 30-85 70-85s70 35 70 85"/>
+    <path d="M250 200c0-40 22-70 50-70s50 30 50 70"/>
+    <!-- Horizontal ribs -->
+    <line x1="245" y1="135" x2="355" y2="135"/>
+    <line x1="230" y1="165" x2="370" y2="165"/>
+    <!-- Drum band -->
+    <line x1="190" y1="205" x2="410" y2="205"/>
+    <line x1="190" y1="212" x2="410" y2="212"/>
+    <!-- Columns -->
+    <g>
+      <line x1="205" y1="212" x2="205" y2="320"/>
+      <line x1="230" y1="212" x2="230" y2="320"/>
+      <line x1="255" y1="212" x2="255" y2="320"/>
+      <line x1="280" y1="212" x2="280" y2="320"/>
+      <line x1="300" y1="212" x2="300" y2="320"/>
+      <line x1="320" y1="212" x2="320" y2="320"/>
+      <line x1="345" y1="212" x2="345" y2="320"/>
+      <line x1="370" y1="212" x2="370" y2="320"/>
+      <line x1="395" y1="212" x2="395" y2="320"/>
+    </g>
+    <!-- Base -->
+    <line x1="170" y1="320" x2="430" y2="320"/>
+    <line x1="155" y1="335" x2="445" y2="335"/>
+    <line x1="140" y1="350" x2="460" y2="350"/>
+  </g>
+</svg>
