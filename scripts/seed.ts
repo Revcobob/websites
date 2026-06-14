@@ -8,6 +8,7 @@
  * Requires NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in env
  * (e.g. .env.local). Run after the SQL migrations are applied.
  */
+import './loadEnv';
 import { createClient } from '@supabase/supabase-js';
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

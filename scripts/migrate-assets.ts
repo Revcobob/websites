@@ -6,6 +6,7 @@
  *
  * Safe to re-run — it skips files that already exist in the target bucket.
  */
+import './loadEnv';
 import { createClient } from '@supabase/supabase-js';
 import { promises as fs } from 'fs';
 import path from 'path';
