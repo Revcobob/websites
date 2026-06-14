@@ -1,7 +1,6 @@
-// Edge-safe HTML rewriter. Uses Cloudflare/Vercel's HTMLRewriter when
-// available, otherwise falls back to lightweight regex passes. The fallback
-// is only used in non-edge environments (e.g. local Node dev runtime), where
-// performance is less critical.
+// Edge-safe HTML rewriter. Uses regex passes with backreferences so the
+// replacement scopes to the matched element's actual closing tag, even when
+// the element contains nested children (icons, spans, etc.).
 
 type ScalarPatch = { selector: string; value: string };
 type AttrPatch = { selector: string; attr: string; value: string };
@@ -19,7 +18,6 @@ export interface CmsPatches {
   canonical?: string;
 }
 
-// Patches based on data-cms attributes plus optional metadata overrides.
 export function buildPatchesFromPayload(payload: CmsPagePayload): CmsPatches {
   const texts: ScalarPatch[] = [];
   const attrs: AttrPatch[] = [];
@@ -38,15 +36,12 @@ export function buildPatchesFromPayload(payload: CmsPagePayload): CmsPatches {
     }
   }
 
-  // Renderable list slots → HTML replacement
   for (const slot of payload.listSlots) {
     innerHtml.push({ selector: `[data-cms-list="${slot.key}"]`, html: slot.html });
   }
 
   return {
-    texts,
-    attrs,
-    innerHtml,
+    texts, attrs, innerHtml,
     metaTitle:       payload.seo.title,
     metaDescription: payload.seo.description,
     ogTitle:         payload.seo.ogTitle,
@@ -79,25 +74,35 @@ export interface CmsPagePayload {
   };
 }
 
-// Use HTMLRewriter when available (Vercel Edge / Cloudflare)
-declare const HTMLRewriter: any;
-
 export function applyPatches(html: string, patches: CmsPatches): string {
-  // Fallback: simple regex-based patching. Selectors are limited to
-  // [data-cms="…"], [data-cms-href="…"], [data-cms-src="…"], [data-cms-list="…"].
   let out = html;
 
+  // Text patches: replace the element's entire inner content with escaped text.
   for (const p of patches.texts) {
-    const re = makeAttrSelectorRegex(p.selector, true);
-    out = out.replace(re, (match, openTag) => `${openTag}${escapeHtml(p.value)}</`);
+    const re = makeElementRegex(p.selector);
+    if (!re) continue;
+    out = out.replace(re, (_full, openTag: string, tagName: string) =>
+      `${openTag}${escapeHtml(p.value)}</${tagName}>`
+    );
   }
+
+  // Attribute patches: rewrite only the opening tag, leave body intact.
   for (const p of patches.attrs) {
-    const re = makeAttrSelectorRegex(p.selector, false);
-    out = out.replace(re, (match) => setOrInsertAttr(match, p.attr, p.value));
+    const re = makeElementRegex(p.selector);
+    if (!re) continue;
+    out = out.replace(re, (_full, openTag: string, tagName: string, body: string) =>
+      `${setOrInsertAttr(openTag, p.attr, p.value)}${body}</${tagName}>`
+    );
   }
+
+  // Inner-HTML patches: replace inner content with raw HTML (used for the
+  // server-rendered list templates).
   for (const p of patches.innerHtml) {
-    const re = makeAttrSelectorRegex(p.selector, true);
-    out = out.replace(re, (match, openTag) => `${openTag}${p.html}</`);
+    const re = makeElementRegex(p.selector);
+    if (!re) continue;
+    out = out.replace(re, (_full, openTag: string, tagName: string) =>
+      `${openTag}${p.html}</${tagName}>`
+    );
   }
 
   if (patches.metaTitle)       out = replaceTagText(out, 'title', patches.metaTitle);
@@ -112,17 +117,23 @@ export function applyPatches(html: string, patches: CmsPatches): string {
 
 // ── helpers ────────────────────────────────────────────────────────────────
 
-function makeAttrSelectorRegex(selector: string, captureOpenTag: boolean): RegExp {
-  // Convert simple [attr="value"] selector into a regex that matches the
-  // opening tag plus the content up to the next </
+// Build a regex that matches an entire element selected by a single attr.
+// Captures:
+//   $1 = full opening tag
+//   $2 = tag name (for matching the real closing tag, even with nested children)
+//   $3 = inner body
+function makeElementRegex(selector: string): RegExp | null {
   const m = selector.match(/^\[([a-z0-9-]+)="([^"]+)"\]$/i);
-  if (!m) return new RegExp('a^');
+  if (!m) return null;
   const [, attr, value] = m;
   const attrRe = `${escapeRe(attr!)}="${escapeRe(value!)}"`;
-  const open = `<[a-zA-Z][a-zA-Z0-9]*\\b[^>]*?\\b${attrRe}[^>]*?>`;
-  const body = '([\\s\\S]*?)';
-  if (captureOpenTag) return new RegExp(`(${open})${body}</`, 'g');
-  return new RegExp(open, 'g');
+  // Greedy on body but anchored to the matching </tag>. The non-capturing
+  // approach using `(?:(?!</\\2>).)*` keeps it safe with nested tags of a
+  // different name.
+  return new RegExp(
+    `(<([a-zA-Z][a-zA-Z0-9]*)\\b[^>]*?\\b${attrRe}[^>]*?>)([\\s\\S]*?)</\\2>`,
+    'gi'
+  );
 }
 
 function setOrInsertAttr(openTag: string, attr: string, value: string): string {
