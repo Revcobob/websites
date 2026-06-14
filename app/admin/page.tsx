@@ -4,6 +4,8 @@ import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import { clerkConfigured } from '@/lib/env';
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminSignInPage({ searchParams }: { searchParams: { denied?: string } }) {
   if (!clerkConfigured()) {
     return (
@@ -23,7 +25,30 @@ export default async function AdminSignInPage({ searchParams }: { searchParams: 
     );
   }
 
-  const { userId } = await auth();
+  // Bail out gracefully if Clerk has configured keys but the runtime still
+  // can't initialize a session (network, key mismatch, etc.). Without this
+  // guard a thrown auth() call surfaces as Vercel's generic 500.
+  let userId: string | null = null;
+  try {
+    ({ userId } = await auth());
+  } catch (err) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-sand p-6">
+        <div className="card-base p-8 max-w-md text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-clay">Foundation CMS</p>
+          <h1 className="mt-3 font-serif text-2xl text-ink font-semibold">Sign-in service unavailable.</h1>
+          <p className="mt-3 text-sm text-ink-soft">
+            Couldn’t reach the authentication service. Double-check that{' '}
+            <code className="bg-sand-deep/40 px-1 rounded">NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY</code> and{' '}
+            <code className="bg-sand-deep/40 px-1 rounded">CLERK_SECRET_KEY</code> are set in Vercel and that
+            the redeploy picked them up.
+          </p>
+          <p className="mt-3 text-xs text-ink-mute">{(err as Error)?.message ?? 'Unknown error'}</p>
+          <Link href="/" className="btn-secondary mt-6 inline-flex">Back to site</Link>
+        </div>
+      </div>
+    );
+  }
   if (userId) redirect('/admin/dashboard');
 
   return (
@@ -48,11 +73,9 @@ export default async function AdminSignInPage({ searchParams }: { searchParams: 
           </div>
         )}
         <SignIn
-          path="/admin"
-          routing="path"
-          afterSignInUrl="/admin/dashboard"
-          afterSignUpUrl="/admin/dashboard"
-          signUpUrl="/admin"
+          routing="hash"
+          fallbackRedirectUrl="/admin/dashboard"
+          signUpFallbackRedirectUrl="/admin/dashboard"
         />
         <Link href="/" className="mt-6 text-sm text-ink-mute hover:text-teal">← Return to the public site</Link>
       </div>
