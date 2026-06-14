@@ -51,7 +51,14 @@ export async function GET(_req: NextRequest, { params }: { params: { slug: strin
     status: 200,
     headers: {
       'content-type': 'text/html; charset=utf-8',
-      'cache-control': 's-maxage=60, stale-while-revalidate=300'
+      // No edge cache while the client is iterating on content. Each
+      // request goes through to the route handler and back to Supabase
+      // so edits show up immediately. Acceptable for a low-traffic
+      // campaign site; we can layer in tagged revalidation later if
+      // origin load ever becomes a concern.
+      'cache-control': 'no-store, must-revalidate',
+      'cdn-cache-control': 'no-store',
+      'vercel-cdn-cache-control': 'no-store'
     }
   });
 }
