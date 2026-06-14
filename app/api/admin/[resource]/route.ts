@@ -56,6 +56,18 @@ export async function POST(req: NextRequest, { params }: { params: { resource: s
     if (error) return jsonError(error.message, 500);
     return NextResponse.json({ ok: true, data });
   }
+  // If the body carries the primary key, treat this as a "save" (upsert) so
+  // editors can blindly POST without worrying about INSERT-vs-UPDATE. This
+  // matches what the page editor and SEO editor expect.
+  if (body && body[meta.pk] !== undefined && body[meta.pk] !== null && body[meta.pk] !== '') {
+    const { data, error } = await sb
+      .from(meta.table)
+      .upsert(body, { onConflict: meta.pk })
+      .select()
+      .single();
+    if (error) return jsonError(error.message, 500);
+    return NextResponse.json({ ok: true, data });
+  }
   const { data, error } = await sb.from(meta.table).insert(body).select().single();
   if (error) return jsonError(error.message, 500);
   return NextResponse.json({ ok: true, data });
