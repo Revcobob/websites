@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Admin-scoped base styles. The public HTML files in /public continue to
+   load Tailwind via CDN and are untouched. */
+
+@layer base {
+  html, body {
+    @apply bg-sand text-ink font-sans antialiased;
+  }
+}
+
+@layer components {
+  .marker-line {
+    @apply h-[3px] w-12 bg-clay rounded-full;
+  }
+  .input-base {
+    @apply w-full rounded-lg border border-sand-deep bg-white px-3 py-2.5
+           text-sm text-ink placeholder:text-ink-mute/70
+           focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal;
+  }
+  .label-base {
+    @apply block text-xs font-semibold uppercase tracking-wider text-ink-mute mb-2;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-teal text-sand
+           font-semibold px-5 py-2.5 text-sm
+           hover:bg-teal-deep transition-colors disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-sand-deep bg-white text-ink
+           font-semibold px-5 py-2.5 text-sm
+           hover:bg-sand hover:border-teal/40 transition-colors disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-clay text-white
+           font-semibold px-5 py-2.5 text-sm
+           hover:bg-clay-deep transition-colors disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1 rounded-md text-sm text-ink-soft
+           hover:text-teal hover:bg-sand-deep/40 px-2 py-1 transition-colors;
+  }
+  .card-base {
+    @apply rounded-2xl bg-white border border-sand-deep shadow-soft;
+  }
+}
