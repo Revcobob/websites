@@ -71,8 +71,8 @@ export function GivingEditor({ initial }: { initial: DonationContent | null }) {
       <Card>
         <h3 className="font-serif text-lg text-ink font-semibold">Hero section</h3>
         <div className="grid sm:grid-cols-2 gap-4 mt-4">
-          <Field label="Eyebrow"><TextInput value={data.hero_eyebrow ?? ''} onChange={e => set({ hero_eyebrow: e.target.value })} /></Field>
           <Field label="Title"><TextInput value={data.hero_title ?? ''} onChange={e => set({ hero_title: e.target.value })} /></Field>
+          <Field label="Eyebrow"><TextInput value={data.hero_eyebrow ?? ''} onChange={e => set({ hero_eyebrow: e.target.value })} /></Field>
         </div>
         <div className="mt-4">
           <Field label="Body"><TextArea value={data.hero_body ?? ''} onChange={e => set({ hero_body: e.target.value })} /></Field>

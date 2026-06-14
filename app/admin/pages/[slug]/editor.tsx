@@ -71,11 +71,11 @@ export function PageEditor({ slug, initialPage, initialSections }: Props) {
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Eyebrow / small label">
-                <TextInput value={s.eyebrow ?? ''} onChange={e => patchSection(s.id, { eyebrow: e.target.value })} />
-              </Field>
               <Field label="Heading">
                 <TextInput value={s.heading ?? ''} onChange={e => patchSection(s.id, { heading: e.target.value })} />
+              </Field>
+              <Field label="Eyebrow / small label">
+                <TextInput value={s.eyebrow ?? ''} onChange={e => patchSection(s.id, { eyebrow: e.target.value })} />
               </Field>
             </div>
             <div className="mt-4">
