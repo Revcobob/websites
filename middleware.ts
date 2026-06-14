@@ -1,33 +1,43 @@
-import { authMiddleware } from '@clerk/nextjs/server';
+import { NextResponse, type NextRequest } from 'next/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-// Public paths are served as-is. The static HTML files in /public are
-// handled by Next.js directly; the CMS content injection happens server-side
-// inside app/(public)/[...slug] route, NOT in middleware, because Vercel's
-// edge middleware can't easily stream-rewrite a static asset response while
-// preserving the file response's headers/caching contract. Keeping this
-// thin lets Clerk gate /admin and /api/admin without touching public assets.
+const isProtectedRoute = createRouteMatcher([
+  '/admin/dashboard(.*)',
+  '/admin/pages(.*)',
+  '/admin/updates(.*)',
+  '/admin/events(.*)',
+  '/admin/timeline(.*)',
+  '/admin/honor-roll(.*)',
+  '/admin/giving(.*)',
+  '/admin/letters(.*)',
+  '/admin/documents(.*)',
+  '/admin/media-coverage(.*)',
+  '/admin/media(.*)',
+  '/admin/subscribers(.*)',
+  '/admin/contact(.*)',
+  '/admin/seo(.*)',
+  '/admin/settings(.*)',
+  '/api/admin/(.*)'
+]);
 
-export default authMiddleware({
-  publicRoutes: [
-    '/',
-    '/admin',
-    '/admin/sign-in(.*)',
-    '/admin/sign-up(.*)',
-    '/api/public/(.*)',
-    '/api/page-content/(.*)',
-    '/mhlc-(.*)\\.html',
-    '/assets/(.*)',
-    '/cms-bootstrap.js',
-    '/favicon.ico'
-  ],
-  ignoredRoutes: [
-    '/assets/(.*)',
-    '/_next/(.*)',
-    '/favicon.ico'
-  ]
+const clerkConfigured = Boolean(
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY
+);
+
+const clerk = clerkMiddleware(async (auth, req) => {
+  if (isProtectedRoute(req)) {
+    const { userId } = await auth();
+    if (!userId) await auth.protect();
+  }
 });
 
+// When Clerk isn't configured, skip Clerk entirely so the public site still
+// boots cleanly. Admin pages render a configuration hint instead of crashing.
+export default function middleware(req: NextRequest, ev: any) {
+  if (!clerkConfigured) return NextResponse.next();
+  return (clerk as any)(req, ev);
+}
+
 export const config = {
-  // Apply to everything except static assets that Next.js handles internally.
   matcher: ['/((?!_next/static|_next/image|.*\\..*).*)', '/', '/(api|trpc)(.*)']
 };

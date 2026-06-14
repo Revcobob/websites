@@ -2,9 +2,8 @@ import { auth, currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import { env } from '@/lib/env';
 
-// Check if the signed-in user's primary email is on the admin allowlist.
 export async function requireAdmin(): Promise<{ userId: string; email: string }> {
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) redirect('/admin');
   const user = await currentUser();
   const email = user?.primaryEmailAddress?.emailAddress?.toLowerCase() ?? '';
@@ -15,10 +14,8 @@ export async function requireAdmin(): Promise<{ userId: string; email: string }>
   return { userId, email };
 }
 
-// Same check, but returns a boolean instead of redirecting. Used inside
-// API route handlers that need to return a 401/403 JSON response.
 export async function isAdmin(): Promise<{ ok: true; userId: string; email: string } | { ok: false; reason: string }> {
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) return { ok: false, reason: 'unauthenticated' };
   const user = await currentUser();
   const email = user?.primaryEmailAddress?.emailAddress?.toLowerCase() ?? '';
