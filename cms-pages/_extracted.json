@@ -1,0 +1,284 @@
+{
+  "homepage": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Quitman · Wood County · East Texas",
+      "heading": "A new kind of memory care, coming to East Texas.",
+      "body": "The Memory Health Life Center will give 54 East Texans living with dementia a place to live with dignity, purpose, and daily life, and train the caregivers our region needs.",
+      "cta_label": "Give to Build It",
+      "cta_href": "mhlc-give.html"
+    },
+    "vision": {
+      "label": "The Vision",
+      "eyebrow": "The Vision",
+      "heading": "A dementia care campus built around daily life.",
+      "body": "Inspired by the Hogeweyk model from the Netherlands and adapted for East Texas families, the Memory Health Life Center is being designed as a residential community, not a hallway. Residents will live in homes, walk the grounds, tend gardens and animals, and share daily life with neighbors, caregivers, and visiting students.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "need": {
+      "label": "Why Memory Care Matters",
+      "eyebrow": "Why Memory Care Matters",
+      "heading": "Rural East Texas families are facing dementia alone.",
+      "body": "The need is here. The current options aren't enough. Families travel for hours to reach specialists, caregivers carry years of around-the-clock care without support, and existing facilities too often default to confinement.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "services": {
+      "label": "What the Center Will Provide",
+      "eyebrow": "What the Center Will Provide",
+      "heading": "Care that looks like a life, not a hallway.",
+      "body": "Homes, a working farm, gardens, classrooms, and the people to make it real, under one roof, in one community.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "partners": {
+      "label": "A Regional Resource",
+      "eyebrow": "Regional Resource",
+      "heading": "Built in Quitman. Built for the region.",
+      "body": "Adjacent to UT Health Quitman Hospital. A teaching site for the University of Texas at Tyler School of Medicine. Designed to serve East Texas families, including low- and moderate-income families, with a model that prizes daily life over containment.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "support": {
+      "label": "Support the Campaign",
+      "eyebrow": "Support the Campaign",
+      "heading": "Help build it.",
+      "body": "A $60M+ capital project, made possible one gift at a time. Federal funds are committed. Community gifts are growing. Every dollar moves the Memory Health Life Center closer to opening day.",
+      "cta_label": "Give Now",
+      "cta_href": "mhlc-give.html"
+    },
+    "progress": {
+      "label": "Project Progress",
+      "eyebrow": "Project Progress",
+      "heading": "Where we are right now.",
+      "body": "From a 2020 kitchen-table conversation to a federally backed regional project, the Memory Health Life Center is being built in plain view.",
+      "cta_label": "See the full timeline",
+      "cta_href": "#"
+    },
+    "families": {
+      "label": "Families & Caregivers",
+      "eyebrow": "Families &amp; Caregivers",
+      "heading": "If you're caring for someone with dementia, we see you.",
+      "body": "The Memory Health Life Center is being built for families like yours. While we're building, we're here with resources, events, and a place to stay informed.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "updates": {
+      "label": "Latest Updates",
+      "eyebrow": "Latest Updates",
+      "heading": "News from the Memory Health Life Center",
+      "body": "In-depth coverage of the Memory Health Life Center vision and the path to state matching funds.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "final_cta": {
+      "label": "Final Donate / Contact",
+      "eyebrow": "Build it with us",
+      "heading": "Every gift, large or small, moves this closer to opening day.",
+      "body": "Make a gift online, or talk with our team about major gifts, naming opportunities, planned giving, and partnership.",
+      "cta_label": "Give Now",
+      "cta_href": "mhlc-give.html"
+    }
+  },
+  "overview": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Project Overview",
+      "heading": "A campus for living and learning.",
+      "body": "The Memory Health Life Center is a 54-bed, 29-acre brain-health village rising in Quitman, Texas, adjacent to UT Health Quitman. This page walks through the mission, the site, the care model, the numbers, and the downloads behind it.",
+      "cta_label": "Start at the mission",
+      "cta_href": "#mission"
+    },
+    "mission": {
+      "label": "The Mission",
+      "eyebrow": "Our Mission",
+      "heading": "What we are here to do.",
+      "body": "The Wood County Health Care Foundation began with one promise: build a place where families do not have to leave East Texas to find good dementia care, and where the people who provide that care can learn how to do it well.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "site": {
+      "label": "The Site",
+      "eyebrow": "The Site & Region",
+      "heading": "29 acres, next door to a hospital.",
+      "body": "The Center for Memory Health & Education rises on 29 acres owned by the Wood County Central Hospital District, directly adjacent to UT Health's Quitman Hospital campus. The siting is intentional — a clinical neighbor a short walk away, and a regional position that puts millions of Texans within reach.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "campus": {
+      "label": "The Campus",
+      "eyebrow": "What's on the Campus",
+      "heading": "Six places, one campus.",
+      "body": "Not a single building with corridors and doors. A village — residential dwellings, a clinic, a barn, gardens, reflection grounds, and student housing — designed so daily life feels like a neighborhood, not an institution.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "care_model": {
+      "label": "Care Model",
+      "eyebrow": "The Care Model",
+      "heading": "Hogeweyk-inspired. Zeisel-trained.",
+      "body": "The care model was pioneered by John Zeisel, PhD — a leading expert on dementia care and a former Harvard professor — and built on five foundational principles. The same five principles shape every program, every space, and every interaction on the campus.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "downloads": {
+      "label": "Downloads",
+      "eyebrow": "Downloads",
+      "heading": "Take the deck with you.",
+      "body": "For donors, board members, partners, and journalists who need the full picture — the foundation maintains a current presentation deck and the most recent conceptual drawings of the campus.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "foundation": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Foundation",
+      "heading": "The Wood County Health Care Foundation.",
+      "body": "A 501(c)(3) nonprofit stewarding health care in Wood County since 1989. Today, leading the work to build the Memory Health Life Center in Quitman, Texas.",
+      "cta_label": "Donate to the Memory Health Life Center",
+      "cta_href": "mhlc-give.html"
+    },
+    "charter": {
+      "label": "Charter",
+      "eyebrow": "Charter",
+      "heading": "Our purpose.",
+      "body": "Drawn verbatim from the Foundation's Restated Certificate of Formation, approved by the Texas Secretary of State on September 2, 2022.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "history": {
+      "label": "History",
+      "eyebrow": "History",
+      "heading": "From 1989 to today.",
+      "body": "Four moments in the Foundation's story so far.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "board": {
+      "label": "Board & Leadership",
+      "eyebrow": "Board Members",
+      "heading": "Members.",
+      "body": "Voting board members from across Wood County, East Texas, and the broader health care, business, and civic community.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "give": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Give",
+      "heading": "Build it with us.",
+      "body": "A $60M+ capital project, made possible one gift at a time. Federal funds are committed. Community gifts are growing. Every gift moves the Memory Health Life Center closer to opening day.",
+      "cta_label": "Give now",
+      "cta_href": "#donate-form"
+    },
+    "donate_form": {
+      "label": "Donate Form Intro",
+      "eyebrow": "Give today",
+      "heading": "Make a secure gift.",
+      "body": "Choose your amount, add an optional dedication, and continue to secure payment. Gifts are tax-deductible to the extent allowed by law.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "other_ways": {
+      "label": "Other Ways to Give",
+      "eyebrow": "Other ways to give",
+      "heading": "Many paths. One purpose.",
+      "body": "Some of the most meaningful gifts arrive by check, by bequest, or through a corporate match. We will walk every donor through the path that fits their plan.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "events": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Events",
+      "heading": "What's coming up.",
+      "body": "Caregiver workshops, community gatherings, foundation briefings, and fundraising events from the Memory Health Life Center and the Wood County Health Care Foundation.",
+      "cta_label": "See upcoming events",
+      "cta_href": "#upcoming"
+    },
+    "upcoming": {
+      "label": "Upcoming Events",
+      "eyebrow": "Upcoming Events",
+      "heading": "Pick the kind of gathering for you.",
+      "body": "A morning of practical training on communication, daily care, and self-care for family caregivers of loved ones with dementia. Coffee provided.",
+      "cta_label": "RSVP",
+      "cta_href": "mhlc-contact.html"
+    },
+    "notify": {
+      "label": "Event Notifications",
+      "eyebrow": "Stay In The Loop",
+      "heading": "Get event reminders by email.",
+      "body": "One email when something is scheduled. No spam, no fundraising appeals from this list — just the next caregiver workshop, the next site tour, the next foundation briefing.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "contributors": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Give / Honor Roll",
+      "heading": "Built, gift by gift.",
+      "body": "The families, individuals, and organizations whose founding contributions made the Memory Health Life Center possible. We are honored to recognize each of them.",
+      "cta_label": "Join them — give now",
+      "cta_href": "mhlc-give.html"
+    },
+    "founders": {
+      "label": "Founders Roll",
+      "eyebrow": "Founding Circle",
+      "heading": "Organizations & individuals — $10,000 or more.",
+      "body": "These founding contributors stepped forward at the very beginning. Their leadership unlocked the federal earmark, attracted regional partners, and set the campaign in motion.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "letters": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Letters of Support",
+      "heading": "On the record.",
+      "body": "Federal, state, academic, medical, and community leaders have put their names behind the Memory Health Life Center. The letters below are excerpted with attribution; full signed letters are on file with the Wood County Health Care Foundation.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "resources": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Resources",
+      "heading": "Trusted help, when you need it.",
+      "body": "A curated set of resources for dementia caregivers and East Texas families: 24/7 helplines, local support, national organizations, and education. We've vetted every link so you don't have to.",
+      "cta_label": "Get help now",
+      "cta_href": "#crisis"
+    },
+    "crisis": {
+      "label": "Crisis Helpline",
+      "eyebrow": "24 / 7 · Free · Confidential",
+      "heading": "Need to talk to someone right now?",
+      "body": "The Alzheimer's Association 24/7 Helpline is staffed day and night by trained, master's-level clinicians. They handle crisis calls, referrals to local community programs, dementia-related education, and emotional support, in your preferred language through their interpreter service.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  },
+  "contact": {
+    "hero": {
+      "label": "Hero",
+      "eyebrow": "Home / Contact Us",
+      "heading": "Get in touch.",
+      "body": "Fill out the form below and a member of the Wood County Health Care Foundation team will be in touch within one business day. For urgent caregiver questions, the Alzheimer's Association 24/7 Helpline is on the Resources page.",
+      "cta_label": null,
+      "cta_href": null
+    },
+    "form_intro": {
+      "label": "Form Introduction",
+      "eyebrow": "Send a Message",
+      "heading": "We read every message.",
+      "body": "Tell us what you're reaching out about and the best way to get back to you. A foundation team member will respond within one business day.",
+      "cta_label": null,
+      "cta_href": null
+    }
+  }
+}
