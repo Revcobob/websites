@@ -14,6 +14,11 @@ const nextConfig = {
       ]
     };
   },
+  // Vercel's serverless bundler doesn't trace fs.readFile() arguments, so
+  // we explicitly tell it to include /cms-pages with the route handler.
+  outputFileTracingIncludes: {
+    '/api/page/[slug]': ['./cms-pages/**/*']
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '*.supabase.co' }
