@@ -8,6 +8,7 @@ const NAV: NavItem[] = [
   { href: '/admin/updates',       label: 'Project Updates',    group: 'content' },
   { href: '/admin/events',        label: 'Events',             group: 'content' },
   { href: '/admin/timeline',      label: 'Project Timeline',   group: 'content' },
+  { href: '/admin/board-members', label: 'Board & Foundation', group: 'content' },
   { href: '/admin/honor-roll',    label: 'Honor Roll',         group: 'campaign' },
   { href: '/admin/giving',        label: 'Donation Page',      group: 'campaign' },
   { href: '/admin/giving/inquiries', label: 'Donation Inquiries', group: 'campaign' },

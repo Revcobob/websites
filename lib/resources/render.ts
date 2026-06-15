@@ -4,7 +4,7 @@
 
 import type {
   EventItem, NewsPost, HonorRollEntry, LetterOfSupport,
-  DocumentItem, TimelineMilestone, MediaCoverageItem
+  DocumentItem, TimelineMilestone, MediaCoverageItem, BoardMember
 } from './types';
 
 const esc = (s: string | null | undefined): string =>
@@ -173,6 +173,54 @@ export function renderMediaCoverage(items: MediaCoverageItem[]): string {
         ${m.external_url ? `<a href="${esc(m.external_url)}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-teal-deep">Read the article <span aria-hidden="true">→</span></a>` : ''}
       </div>
     </article>`).join('\n');
+}
+
+// ── Board / Officers / Staff ──────────────────────────────────────────────
+// Three render variants for the foundation page. `officers` are large cards
+// with a clay-colored role label; `board` is a 3-column grid; `staff` is a
+// 2-column grid with a softer label.
+
+function renderPerson(p: BoardMember, opts: { variant: 'officers' | 'board' | 'staff' }): string {
+  const labelTone =
+    opts.variant === 'officers' ? 'text-xs text-clay font-semibold uppercase tracking-[0.18em]' :
+    opts.variant === 'board'    ? 'text-[11px] text-ink-mute font-semibold uppercase tracking-[0.16em]' :
+                                  'text-[11px] text-ink-mute font-semibold uppercase tracking-[0.16em]';
+  const cardPad = opts.variant === 'officers' ? 'p-6 sm:p-7' : 'p-6';
+  const headingSize = opts.variant === 'officers' ? 'text-2xl' : 'text-lg';
+  const headRow = p.image_url
+    ? `<div class="flex items-center gap-4">
+         <img src="${esc(p.image_url)}" alt="${esc(p.image_alt ?? p.name)}"
+              class="w-16 h-16 rounded-full object-cover shrink-0 border border-sand-deep bg-sand"
+              loading="lazy" />
+         <div>
+           <p class="${labelTone}">${esc(p.title ?? (opts.variant === 'officers' ? 'Officer' : 'Board Member'))}</p>
+           <h3 class="mt-1 font-serif ${headingSize} font-semibold text-ink leading-tight">${esc(p.name)}</h3>
+         </div>
+       </div>`
+    : `<div class="flex items-start gap-4">
+         <div>
+           <p class="${labelTone}">${esc(p.title ?? (opts.variant === 'officers' ? 'Officer' : 'Board Member'))}</p>
+           <h3 class="mt-1 font-serif ${headingSize} font-semibold text-ink leading-tight">${esc(p.name)}</h3>
+         </div>
+       </div>`;
+  return `
+    <article class="rounded-2xl bg-sand-card border border-sand-deep ${cardPad} shadow-soft hover:shadow-lift transition-shadow">
+      ${headRow}
+      ${p.bio ? `<p class="mt-4 text-sm text-ink-soft leading-relaxed">${esc(p.bio)}</p>` : ''}
+    </article>`;
+}
+
+export function renderOfficers(people: BoardMember[]): string {
+  if (people.length === 0) return renderEmpty('Officers will appear here when added.');
+  return people.map(p => renderPerson(p, { variant: 'officers' })).join('\n');
+}
+export function renderBoardMembers(people: BoardMember[]): string {
+  if (people.length === 0) return renderEmpty('Board members will appear here when added.');
+  return people.map(p => renderPerson(p, { variant: 'board' })).join('\n');
+}
+export function renderStaffAdvisors(people: BoardMember[]): string {
+  if (people.length === 0) return renderEmpty('Staff and advisors will appear here when added.');
+  return people.map(p => renderPerson(p, { variant: 'staff' })).join('\n');
 }
 
 function renderEmpty(msg: string): string {
