@@ -216,6 +216,22 @@ export interface TimelineMilestone {
   order_index: number;
 }
 
+export type BoardCategory = 'officers' | 'board' | 'staff';
+
+export interface BoardMember {
+  id: string;
+  name: string;
+  title: string | null;
+  category: BoardCategory;
+  bio: string | null;
+  image_url: string | null;
+  image_alt: string | null;
+  order_index: number;
+  published: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface MediaCoverageItem {
   id: string;
   source_name: string | null;
@@ -260,6 +276,7 @@ export const RESOURCE_TABLES = {
   news_posts:          { table: 'news_posts',          singleton: false, pk: 'id' },
   timeline_milestones: { table: 'timeline_milestones', singleton: false, pk: 'id' },
   media_coverage:      { table: 'media_coverage',      singleton: false, pk: 'id' },
+  board_members:       { table: 'board_members',       singleton: false, pk: 'id' },
   media_library:       { table: 'media_library',       singleton: false, pk: 'id' }
 } as const;
 

@@ -5,7 +5,7 @@ import type {
   DocumentItem, TimelineMilestone, MediaCoverageItem, SiteSettings, DonationContent
 } from './types';
 import type { CmsPagePayload } from '@/lib/injectCmsContent';
-import { renderEventsList, renderNewsList, renderHonorRoll, renderLetters, renderDocuments, renderTimeline, renderMediaCoverage } from './render';
+import { renderEventsList, renderNewsList, renderHonorRoll, renderLetters, renderDocuments, renderTimeline, renderMediaCoverage, renderOfficers, renderBoardMembers, renderStaffAdvisors } from './render';
 
 // Pages whose HTML file slug we recognise; anything else is bypassed.
 export const PUBLIC_PAGES: Record<string, string> = {
@@ -109,8 +109,15 @@ async function buildListSlots(slug: string): Promise<{ key: string; html: string
       break;
     }
     case 'foundation': {
-      const press = await sb.from('media_coverage').select('*').order('order_index', { ascending: true });
+      const [press, people] = await Promise.all([
+        sb.from('media_coverage').select('*').order('order_index', { ascending: true }),
+        sb.from('board_members').select('*').eq('published', true).order('order_index', { ascending: true })
+      ]);
       slots.push({ key: 'media_coverage', html: renderMediaCoverage((press.data as MediaCoverageItem[]) ?? []) });
+      const everyone = (people.data ?? []) as import('./types').BoardMember[];
+      slots.push({ key: 'officers',  html: renderOfficers(everyone.filter(p => p.category === 'officers')) });
+      slots.push({ key: 'board_members', html: renderBoardMembers(everyone.filter(p => p.category === 'board')) });
+      slots.push({ key: 'staff_advisors', html: renderStaffAdvisors(everyone.filter(p => p.category === 'staff')) });
       break;
     }
   }
